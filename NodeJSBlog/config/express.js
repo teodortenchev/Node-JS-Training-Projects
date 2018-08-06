@@ -23,7 +23,7 @@ module.exports = (app, config) => {
     // Session is storage for cookies, which will be de/encrypted with that 'secret' key.
     app.use(session({secret: 'pesho', resave: false, saveUninitialized: false}));
 
-    // For user validation we will use passport module.
+    // For user validation  passport module.
     app.use(passport.initialize());
     app.use(passport.session());
 

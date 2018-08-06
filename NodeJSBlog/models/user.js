@@ -1,7 +1,8 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
+const encryption = require("../utilities/encryption");
 
 module.exports = function (sequelize, DataTypes) {
-    const User = sequelize.define('User', {
+    const User = sequelize.define("User", {
         email: {
             type: Sequelize.STRING,
             required: true,
@@ -24,5 +25,10 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: false
     });
 
+    User.prototype.authenticate = function (password) {
+        let inputPasswordHash = encryption.hashPassword(password, this.salt);
+        return inputPasswordHash === this.passwordHash;
+    }
     return User;
+
 };
