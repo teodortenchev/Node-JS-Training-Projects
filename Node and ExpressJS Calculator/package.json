@@ -10,7 +10,7 @@
     "debug": "^3.1.0",
     "express": "^4.16.3",
     "handlebars-helper-selectif": "^1.0.1",
-    "hbs": "~4.0.1",
+    "hbs": "~4.2.0",
     "mongoose": "^5.7.5",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.5.0"
